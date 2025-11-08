@@ -21,6 +21,7 @@ export default function Header() {
             <Link href="/" className="hover:text-blue-300">Home</Link>
             <Link href="/blocks" className="hover:text-blue-300">Blocks</Link>
             <Link href="/transactions" className="hover:text-blue-300">Transactions</Link>
+            <Link href="/network" className="hover:text-blue-300">Network</Link>
           </nav>
 
           <NetworkStatus />
@@ -44,6 +45,7 @@ export default function Header() {
             <Link href="/" className="block hover:text-blue-300">Home</Link>
             <Link href="/blocks" className="block hover:text-blue-300">Blocks</Link>
             <Link href="/transactions" className="block hover:text-blue-300">Transactions</Link>
+            <Link href="/network" className="block hover:text-blue-300">Network</Link>
           </nav>
         )}
       </div>

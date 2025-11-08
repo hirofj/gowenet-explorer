@@ -1,0 +1,318 @@
+nohup: ignoring input
+
+> gowenet-explorer@0.1.0 dev
+> next dev -H 0.0.0.0
+
+   ▲ Next.js 16.0.1 (Turbopack)
+   - Local:        http://localhost:3000
+   - Network:      http://0.0.0.0:3000
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 1166ms
+ ○ Compiling / ...
+ ⨯ ./app/page.tsx:11:1
+Module not found: Can't resolve '@/lib/config'
+[0m [90m  9 |[39m [36mimport[39m [33mErrorMessage[39m [36mfrom[39m [32m'@/components/ErrorMessage'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m type { [33mBlock[39m[33m,[39m [33mTransactionResponse[39m } [36mfrom[39m [32m'ethers'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m { [33mNETWORK_CONFIG[39m } [36mfrom[39m [32m'@/lib/config'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [36mconst[39m [33mREFRESH_INTERVAL[39m [33m=[39m [35m5000[39m[33m;[39m
+ [90m 14 |[39m[0m
+
+Import map: aliased to relative './lib/config' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET / 500 in 6.6s (compile: 6.5s, render: 179ms)
+ ⚠ Blocked cross-origin request from 192.168.3.86 to /_next/* resource. To allow this, configure "allowedDevOrigins" in next.config
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+ ⨯ ./app/page.tsx:11:1
+Module not found: Can't resolve '@/lib/config'
+[0m [90m  9 |[39m [36mimport[39m [33mErrorMessage[39m [36mfrom[39m [32m'@/components/ErrorMessage'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m type { [33mBlock[39m[33m,[39m [33mTransactionResponse[39m } [36mfrom[39m [32m'ethers'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m { [33mNETWORK_CONFIG[39m } [36mfrom[39m [32m'@/lib/config'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [36mconst[39m [33mREFRESH_INTERVAL[39m [33m=[39m [35m5000[39m[33m;[39m
+ [90m 14 |[39m[0m
+
+Import map: aliased to relative './lib/config' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET / 500 in 45ms (compile: 32ms, render: 13ms)
+ ⨯ ./app/page.tsx:11:1
+Module not found: Can't resolve '@/lib/config'
+[0m [90m  9 |[39m [36mimport[39m [33mErrorMessage[39m [36mfrom[39m [32m'@/components/ErrorMessage'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m type { [33mBlock[39m[33m,[39m [33mTransactionResponse[39m } [36mfrom[39m [32m'ethers'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m { [33mNETWORK_CONFIG[39m } [36mfrom[39m [32m'@/lib/config'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [36mconst[39m [33mREFRESH_INTERVAL[39m [33m=[39m [35m5000[39m[33m;[39m
+ [90m 14 |[39m[0m
+
+Import map: aliased to relative './lib/config' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET / 500 in 29ms (compile: 17ms, render: 12ms)
+ ⨯ ./app/page.tsx:11:1
+Module not found: Can't resolve '@/lib/config'
+[0m [90m  9 |[39m [36mimport[39m [33mErrorMessage[39m [36mfrom[39m [32m'@/components/ErrorMessage'[39m[33m;[39m
+ [90m 10 |[39m [36mimport[39m type { [33mBlock[39m[33m,[39m [33mTransactionResponse[39m } [36mfrom[39m [32m'ethers'[39m[33m;[39m
+[31m[1m>[22m[39m[90m 11 |[39m [36mimport[39m { [33mNETWORK_CONFIG[39m } [36mfrom[39m [32m'@/lib/config'[39m[33m;[39m
+ [90m    |[39m [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+ [90m 12 |[39m
+ [90m 13 |[39m [36mconst[39m [33mREFRESH_INTERVAL[39m [33m=[39m [35m5000[39m[33m;[39m
+ [90m 14 |[39m[0m
+
+Import map: aliased to relative './lib/config' inside of [project]/
+
+
+Import traces:
+  Client Component Browser:
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET / 500 in 38ms (compile: 26ms, render: 13ms)
+ ✓ Compiled in 78ms
+ GET / 200 in 639ms (compile: 273ms, render: 366ms)
+ GET / 200 in 90ms (compile: 16ms, render: 74ms)
+ GET / 200 in 71ms (compile: 13ms, render: 58ms)
+ GET / 200 in 459ms (compile: 185ms, render: 274ms)
+ GET / 200 in 74ms (compile: 11ms, render: 64ms)
+ GET / 200 in 67ms (compile: 11ms, render: 57ms)
+ GET / 200 in 75ms (compile: 11ms, render: 63ms)
+ GET / 200 in 73ms (compile: 12ms, render: 61ms)
+ GET /transactions 200 in 915ms (compile: 880ms, render: 35ms)
+ GET / 200 in 33ms (compile: 10ms, render: 23ms)
+ GET /blocks 200 in 692ms (compile: 660ms, render: 31ms)
+ GET /blocks 200 in 36ms (compile: 10ms, render: 26ms)
+ GET /blocks 200 in 45ms (compile: 11ms, render: 34ms)
+ GET /blocks 200 in 78ms (compile: 12ms, render: 66ms)
+ GET /transactions 200 in 34ms (compile: 12ms, render: 22ms)
+ GET /blocks 200 in 32ms (compile: 11ms, render: 22ms)
+ GET / 200 in 31ms (compile: 9ms, render: 22ms)
+ GET / 200 in 31ms (compile: 10ms, render: 21ms)
+ GET / 200 in 68ms (compile: 10ms, render: 57ms)
+ GET / 200 in 34ms (compile: 11ms, render: 23ms)
+ GET / 200 in 31ms (compile: 11ms, render: 20ms)
+ GET / 200 in 70ms (compile: 10ms, render: 60ms)
+ GET / 200 in 468ms (compile: 207ms, render: 261ms)
+ GET / 200 in 62ms (compile: 9ms, render: 53ms)
+ GET / 200 in 451ms (compile: 167ms, render: 283ms)
+ GET / 200 in 75ms (compile: 13ms, render: 63ms)
+   Reload env: .env.local
+ GET / 200 in 432ms (compile: 161ms, render: 271ms)
+ GET / 200 in 76ms (compile: 12ms, render: 65ms)
+ GET / 200 in 448ms (compile: 167ms, render: 281ms)
+ GET / 200 in 69ms (compile: 11ms, render: 58ms)
+ GET / 200 in 69ms (compile: 11ms, render: 59ms)
+ GET / 200 in 474ms (compile: 181ms, render: 293ms)
+ GET / 200 in 37ms (compile: 13ms, render: 24ms)
+ GET /blocks 200 in 204ms (compile: 150ms, render: 54ms)
+ GET / 200 in 26ms (compile: 7ms, render: 18ms)
+ GET /transactions 200 in 178ms (compile: 138ms, render: 40ms)
+ GET /tx/0x993b3adbaee3084604edaafeb6aff12c3db5f8b6c1754c5b46fcd6527134467b 200 in 1383ms (compile: 1347ms, render: 36ms)
+ GET /tx/0x993b3adbaee3084604edaafeb6aff12c3db5f8b6c1754c5b46fcd6527134467b 200 in 446ms (compile: 66ms, render: 379ms)
+ GET /address/0x9740cfc1A67B5B3A5C0eA6Eea04C10923F435c9d 200 in 1241ms (compile: 1203ms, render: 39ms)
+ GET / 200 in 33ms (compile: 11ms, render: 22ms)
+ GET / 200 in 79ms (compile: 10ms, render: 69ms)
+ GET / 200 in 434ms (compile: 157ms, render: 277ms)
+ GET / 200 in 28ms (compile: 8ms, render: 21ms)
+ GET /transactions 200 in 36ms (compile: 10ms, render: 26ms)
+ GET /blocks 200 in 45ms (compile: 12ms, render: 32ms)
+ GET /block/791 200 in 1240ms (compile: 1209ms, render: 31ms)
+ GET /block/791 200 in 138ms (compile: 53ms, render: 85ms)
+ GET / 200 in 31ms (compile: 10ms, render: 21ms)
+ GET / 200 in 70ms (compile: 10ms, render: 60ms)
+ GET / 200 in 492ms (compile: 210ms, render: 282ms)
+ GET / 200 in 72ms (compile: 13ms, render: 59ms)
+ GET /transactions 200 in 39ms (compile: 15ms, render: 24ms)
+ GET / 200 in 29ms (compile: 11ms, render: 18ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 70ms (compile: 11ms, render: 59ms)
+ GET / 200 in 66ms (compile: 9ms, render: 57ms)
+ GET / 200 in 67ms (compile: 8ms, render: 59ms)
+ GET / 200 in 68ms (compile: 11ms, render: 57ms)
+ GET / 200 in 67ms (compile: 10ms, render: 57ms)
+ GET / 200 in 68ms (compile: 12ms, render: 56ms)
+ GET / 200 in 69ms (compile: 9ms, render: 61ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 69ms (compile: 11ms, render: 57ms)
+ GET / 200 in 75ms (compile: 11ms, render: 64ms)
+ GET / 200 in 72ms (compile: 11ms, render: 61ms)
+ GET / 200 in 69ms (compile: 11ms, render: 57ms)
+ GET / 200 in 67ms (compile: 11ms, render: 57ms)
+ GET / 200 in 64ms (compile: 12ms, render: 52ms)
+ GET / 200 in 65ms (compile: 10ms, render: 56ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 72ms (compile: 13ms, render: 59ms)
+ GET / 200 in 67ms (compile: 11ms, render: 56ms)
+ GET / 200 in 68ms (compile: 10ms, render: 58ms)
+ GET / 200 in 70ms (compile: 12ms, render: 58ms)
+ GET / 200 in 65ms (compile: 10ms, render: 55ms)
+ GET / 200 in 63ms (compile: 10ms, render: 53ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 75ms (compile: 13ms, render: 62ms)
+ GET / 200 in 69ms (compile: 9ms, render: 60ms)
+ GET / 200 in 74ms (compile: 11ms, render: 62ms)
+ GET / 200 in 65ms (compile: 9ms, render: 56ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 68ms (compile: 11ms, render: 56ms)
+ GET / 200 in 69ms (compile: 9ms, render: 59ms)
+ GET / 200 in 68ms (compile: 13ms, render: 55ms)
+ GET / 200 in 63ms (compile: 11ms, render: 52ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 66ms (compile: 9ms, render: 57ms)
+ GET / 200 in 66ms (compile: 12ms, render: 54ms)
+ GET / 200 in 67ms (compile: 11ms, render: 57ms)
+ GET / 200 in 69ms (compile: 11ms, render: 57ms)
+ GET / 200 in 71ms (compile: 13ms, render: 58ms)
+ GET / 200 in 71ms (compile: 11ms, render: 60ms)
+ GET / 200 in 62ms (compile: 7ms, render: 55ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 65ms (compile: 9ms, render: 56ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 69ms (compile: 11ms, render: 59ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 61ms (compile: 11ms, render: 51ms)
+ GET / 200 in 63ms (compile: 12ms, render: 51ms)
+ GET / 200 in 65ms (compile: 12ms, render: 53ms)
+ GET / 200 in 66ms (compile: 12ms, render: 55ms)
+ GET / 200 in 67ms (compile: 11ms, render: 57ms)
+ GET / 200 in 72ms (compile: 12ms, render: 60ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 62ms (compile: 11ms, render: 51ms)
+ GET / 200 in 67ms (compile: 10ms, render: 57ms)
+ GET / 200 in 66ms (compile: 11ms, render: 54ms)
+ GET / 200 in 70ms (compile: 13ms, render: 57ms)
+ GET / 200 in 71ms (compile: 12ms, render: 59ms)
+ GET / 200 in 67ms (compile: 11ms, render: 56ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 63ms (compile: 10ms, render: 53ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 64ms (compile: 10ms, render: 54ms)
+ GET / 200 in 69ms (compile: 12ms, render: 57ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 61ms (compile: 9ms, render: 52ms)
+ GET / 200 in 65ms (compile: 11ms, render: 53ms)
+ GET / 200 in 66ms (compile: 9ms, render: 57ms)
+ GET / 200 in 64ms (compile: 9ms, render: 56ms)
+ GET / 200 in 63ms (compile: 11ms, render: 52ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 62ms (compile: 11ms, render: 51ms)
+ GET / 200 in 62ms (compile: 9ms, render: 54ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 64ms (compile: 10ms, render: 54ms)
+ GET / 200 in 70ms (compile: 12ms, render: 58ms)
+ GET / 200 in 63ms (compile: 12ms, render: 52ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 64ms (compile: 11ms, render: 53ms)
+ GET / 200 in 65ms (compile: 9ms, render: 56ms)
+ GET / 200 in 67ms (compile: 11ms, render: 56ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 67ms (compile: 11ms, render: 57ms)
+ GET / 200 in 65ms (compile: 10ms, render: 55ms)
+ GET / 200 in 62ms (compile: 10ms, render: 52ms)
+ GET / 200 in 63ms (compile: 9ms, render: 54ms)
+ GET / 200 in 67ms (compile: 12ms, render: 55ms)
+ GET / 200 in 67ms (compile: 11ms, render: 57ms)
+ GET / 200 in 67ms (compile: 9ms, render: 58ms)
+ GET / 200 in 69ms (compile: 11ms, render: 58ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 65ms (compile: 11ms, render: 53ms)
+ GET / 200 in 64ms (compile: 10ms, render: 54ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 63ms (compile: 9ms, render: 54ms)
+ GET / 200 in 67ms (compile: 10ms, render: 57ms)
+ GET / 200 in 63ms (compile: 11ms, render: 52ms)
+ GET / 200 in 61ms (compile: 11ms, render: 50ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 63ms (compile: 8ms, render: 55ms)
+ GET / 200 in 64ms (compile: 11ms, render: 52ms)
+ GET / 200 in 64ms (compile: 10ms, render: 54ms)
+ GET / 200 in 68ms (compile: 12ms, render: 55ms)
+ GET / 200 in 64ms (compile: 10ms, render: 54ms)
+ GET / 200 in 62ms (compile: 11ms, render: 51ms)
+ GET / 200 in 67ms (compile: 12ms, render: 55ms)
+ GET / 200 in 63ms (compile: 10ms, render: 53ms)
+ GET / 200 in 64ms (compile: 10ms, render: 54ms)
+ GET / 200 in 67ms (compile: 10ms, render: 57ms)
+ GET / 200 in 72ms (compile: 13ms, render: 59ms)
+ GET / 200 in 63ms (compile: 12ms, render: 52ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 66ms (compile: 11ms, render: 56ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 68ms (compile: 11ms, render: 58ms)
+ GET / 200 in 74ms (compile: 12ms, render: 62ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 66ms (compile: 10ms, render: 55ms)
+ GET / 200 in 65ms (compile: 13ms, render: 52ms)
+ GET / 200 in 69ms (compile: 10ms, render: 59ms)
+ GET / 200 in 66ms (compile: 10ms, render: 56ms)
+ GET / 200 in 65ms (compile: 11ms, render: 54ms)
+ GET / 200 in 68ms (compile: 11ms, render: 57ms)
+ GET / 200 in 66ms (compile: 11ms, render: 55ms)
+ GET / 200 in 63ms (compile: 10ms, render: 52ms)
+ GET / 200 in 61ms (compile: 8ms, render: 52ms)
+ GET / 200 in 63ms (compile: 12ms, render: 51ms)
+ GET /transactions 200 in 41ms (compile: 10ms, render: 31ms)
+ GET /transactions 200 in 80ms (compile: 8ms, render: 72ms)
+ GET /transactions 200 in 72ms (compile: 12ms, render: 60ms)
+ GET /transactions 200 in 73ms (compile: 10ms, render: 63ms)
+ GET /transactions 200 in 72ms (compile: 9ms, render: 63ms)
+ GET /transactions 200 in 69ms (compile: 11ms, render: 58ms)
+ GET /transactions 200 in 66ms (compile: 10ms, render: 55ms)
+ GET /transactions 200 in 71ms (compile: 11ms, render: 60ms)
+ GET / 200 in 70ms (compile: 11ms, render: 59ms)
+ GET /transactions 200 in 72ms (compile: 10ms, render: 62ms)
