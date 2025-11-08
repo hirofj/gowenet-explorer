@@ -16,6 +16,14 @@ export interface PeersResponse {
   peers: Peer[];
 }
 
+function isValidIP(ip: string): boolean {
+  // Check if IP is valid (not 0.0.0.0 or similar invalid addresses)
+  if (!ip || ip.startsWith('0.0.0.0') || ip === '0.0.0.0:1' || ip.includes('0.0.0.0')) {
+    return false;
+  }
+  return true;
+}
+
 async function getPeersDetail(): Promise<PeersResponse> {
   try {
     const baseUrl = NETWORK_CONFIG.rpcUrl.split('/ext/bc/')[0];
@@ -31,15 +39,20 @@ async function getPeersDetail(): Promise<PeersResponse> {
     });
     const data = await response.json();
     
-    const peers: Peer[] = (data.result?.peers || []).map((p: any) => ({
-      nodeId: p.nodeID || 'Unknown',
-      ip: p.ip || 'Unknown',
-      publicIP: p.publicIP || p.ip || 'Unknown',
-      version: p.version || 'Unknown',
-      observedUptime: p.observedUptime || '0',
-      lastSent: p.lastSent || '',
-      lastReceived: p.lastReceived || '',
-    }));
+    const peers: Peer[] = (data.result?.peers || []).map((p: any) => {
+      // Use publicIP if valid, otherwise use ip
+      const displayIP = isValidIP(p.publicIP) ? p.publicIP : (p.ip || 'Unknown');
+      
+      return {
+        nodeId: p.nodeID || 'Unknown',
+        ip: p.ip || 'Unknown',
+        publicIP: displayIP,
+        version: p.version || 'Unknown',
+        observedUptime: p.observedUptime || '0',
+        lastSent: p.lastSent || '',
+        lastReceived: p.lastReceived || '',
+      };
+    });
 
     return {
       totalPeers: data.result?.numPeers || 0,
