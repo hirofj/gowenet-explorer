@@ -313,3 +313,21 @@ tail -f /home/hirofj/gowenet-explorer/explorer.log
 ```
 
 詳細なトラブルシューティングについては、README のトラブルシューティングセクションを参照してください。
+
+## 📝 更新履歴
+
+### Version 1.2.0 (2025-11-09)
+- ✨ Transactions ページ改善
+  - Gas Price表示をGas Feeに変更（実際の手数料を表示）
+  - トランザクション受領書（receipt）から正確な手数料を計算
+- ✨ Network ページ改善
+  - Node Status表示を「Bootstrapped」に変更し、True/False形式で表示
+  - 表示の可読性を向上
+
+### Version 1.1.0 (2025-11-09)
+- ✨ 新機能: Network ページ追加
+  - リアルタイムネットワーク統計
+  - 接続ピア一覧表示
+  - アクティブバリデータ一覧
+  - ネットワーク設定表示
+

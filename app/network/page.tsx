@@ -84,8 +84,8 @@ export default function NetworkPage() {
 
   const getBootstrapStatus = (): { text: string; status: 'success' | 'error' } => {
     return stats?.isBootstrapped
-      ? { text: 'Bootstrapped', status: 'success' }
-      : { text: 'Bootstrapping...', status: 'error' };
+      ? { text: 'True', status: 'success' }
+      : { text: 'False', status: 'error' };
   };
 
   const getGasStatus = (): 'success' | 'warning' | 'error' => {
@@ -123,7 +123,7 @@ export default function NetworkPage() {
             status={stats.validators > 0 ? 'success' : 'error'}
           />
           <NetworkStatsCard
-            label="Node Status"
+            label="Bootstrapped"
             value={bootstrapStatus.text}
             icon={bootstrapStatus.status === 'success' ? '✅' : '⏳'}
             status={bootstrapStatus.status}

@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { shortenHash, shortenAddress, formatGOWE } from '@/lib/utils';
 import { formatUnits } from 'ethers';
-import type { TransactionResponse } from 'ethers';
+import type { TransactionResponse, TransactionReceipt } from 'ethers';
 
 interface TransactionWithBlock extends TransactionResponse {
   blockTimestamp?: number;
+  receipt?: TransactionReceipt;
 }
 
 function formatAge(timestamp: number): string {
@@ -22,7 +23,7 @@ function formatAge(timestamp: number): string {
 
 export default function TransactionRow({ tx }: { tx: TransactionWithBlock }) {
   const [age, setAge] = useState<string>('');
-  const gasPrice = tx.gasPrice ? formatUnits(tx.gasPrice, 'gwei') : '0';
+  const [gasFee, setGasFee] = useState<string>('Loading...');
 
   useEffect(() => {
     if (tx.blockTimestamp) {
@@ -35,6 +36,21 @@ export default function TransactionRow({ tx }: { tx: TransactionWithBlock }) {
       return () => clearInterval(interval);
     }
   }, [tx.blockTimestamp]);
+
+  useEffect(() => {
+    const fetchGasFee = async () => {
+      try {
+        if (tx.receipt) {
+          const fee = tx.receipt.gasUsed * (tx.gasPrice || 0n);
+          setGasFee(formatUnits(fee, 'ether'));
+        }
+      } catch (error) {
+        setGasFee('-');
+      }
+    };
+
+    fetchGasFee();
+  }, [tx]);
 
   return (
     <tr className="hover:bg-gray-50">
@@ -81,7 +97,7 @@ export default function TransactionRow({ tx }: { tx: TransactionWithBlock }) {
         {formatGOWE(tx.value)} GOWE
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-        {parseFloat(gasPrice).toFixed(4)} Gwei
+        {gasFee !== 'Loading...' && gasFee !== '-' ? `${parseFloat(gasFee).toFixed(6)} GOWE` : gasFee}
       </td>
     </tr>
   );

@@ -5,10 +5,11 @@ import { getProvider } from '@/lib/provider';
 import TransactionRow from '@/components/TransactionRow';
 import Loading from '@/components/Loading';
 import ErrorMessage from '@/components/ErrorMessage';
-import type { TransactionResponse, Block } from 'ethers';
+import type { TransactionResponse, TransactionReceipt, Block } from 'ethers';
 
 interface TransactionWithBlock extends TransactionResponse {
   blockTimestamp?: number;
+  receipt?: TransactionReceipt;
 }
 
 export default function TransactionsPage() {
@@ -31,9 +32,11 @@ export default function TransactionsPage() {
           for (const txHash of block.transactions) {
             const tx = await provider.getTransaction(txHash as string);
             if (tx) {
+              const receipt = await provider.getTransactionReceipt(txHash as string);
               txs.push({
                 ...tx,
-                blockTimestamp: block.timestamp
+                blockTimestamp: block.timestamp,
+                receipt: receipt || undefined
               });
             }
             if (txs.length >= 50) break;
@@ -83,7 +86,7 @@ export default function TransactionsPage() {
                     Value
                   </th>
                   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Gas Price
+                    Gas Fee
                   </th>
                 </tr>
               </thead>
