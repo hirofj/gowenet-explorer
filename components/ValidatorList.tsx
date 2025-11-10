@@ -22,6 +22,18 @@ export default function ValidatorList({ validators, loading }: ValidatorListProp
   }
 
   const totalWeight = validators.reduce((sum, v) => sum + v.weight, 0);
+  const activeValidators = validators.filter(v => v.status === 'Active').length;
+
+  const getStatusColor = (status?: string) => {
+    switch (status) {
+      case 'Active':
+        return 'bg-green-100 text-green-800';
+      case 'Offline':
+        return 'bg-red-100 text-red-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   return (
     <div>
@@ -46,7 +58,7 @@ export default function ValidatorList({ validators, loading }: ValidatorListProp
                 </td>
                 <td className="px-4 py-3 font-mono text-sm break-all">{validator.validationId}</td>
                 <td className="px-4 py-3">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusColor(validator.status)}`}>
                     {validator.status || 'Active'}
                   </span>
                 </td>
@@ -58,6 +70,8 @@ export default function ValidatorList({ validators, loading }: ValidatorListProp
       <div className="mt-4 p-4 bg-gray-50 rounded border border-gray-200">
         <p className="text-sm text-gray-600">
           Total Validators: <span className="font-semibold">{validators.length}</span> | 
+          Active: <span className="font-semibold text-green-600">{activeValidators}</span> | 
+          Offline: <span className="font-semibold text-red-600">{validators.length - activeValidators}</span> | 
           Total Weight: <span className="font-semibold">{totalWeight}</span>
         </p>
       </div>

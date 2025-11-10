@@ -37,10 +37,52 @@ async function getPeersCount(): Promise<number> {
   }
 }
 
-async function getValidatorCount(): Promise<number> {
+async function getActiveValidatorCount(): Promise<number> {
   try {
     const baseUrl = NETWORK_CONFIG.rpcUrl.split('/ext/bc/')[0];
-    const response = await fetch(`${baseUrl}/ext/bc/P`, {
+    
+    // Get the node we're connected to
+    const nodeIdResponse = await fetch(`${baseUrl}/ext/info`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'info.getNodeID',
+        params: {},
+        id: 1,
+      }),
+    });
+    const nodeIdData = await nodeIdResponse.json();
+    
+    // Get connected peers
+    const peersResponse = await fetch(`${baseUrl}/ext/info`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        method: 'info.peers',
+        params: {},
+        id: 1,
+      }),
+    });
+    const peersData = await peersResponse.json();
+    
+    const connectedNodeIds = new Set<string>();
+    
+    // Add the node we're connected to
+    if (nodeIdData.result?.nodeID) {
+      connectedNodeIds.add(nodeIdData.result.nodeID);
+    }
+    
+    // Add all peers
+    (peersData.result?.peers || []).forEach((p: any) => {
+      if (p.nodeID) {
+        connectedNodeIds.add(p.nodeID);
+      }
+    });
+    
+    // Get validators
+    const validatorsResponse = await fetch(`${baseUrl}/ext/bc/P`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -52,10 +94,16 @@ async function getValidatorCount(): Promise<number> {
         id: 1,
       }),
     });
-    const data = await response.json();
-    return data.result?.validators?.length || 0;
+    const validatorsData = await validatorsResponse.json();
+    
+    // Count only validators that are connected
+    const activeValidators = (validatorsData.result?.validators || []).filter((v: any) => 
+      connectedNodeIds.has(v.nodeID)
+    );
+    
+    return activeValidators.length;
   } catch (error) {
-    console.error('Error fetching validator count:', error);
+    console.error('Error fetching active validator count:', error);
     return 0;
   }
 }
@@ -152,7 +200,7 @@ export async function GET() {
   try {
     const [peers, validators, isBootstrapped, gasUsedPercent, avgBlockTime, totalTransactions] = await Promise.all([
       getPeersCount(),
-      getValidatorCount(),
+      getActiveValidatorCount(),
       isNodeBootstrapped(),
       getGasUsagePercent(),
       getAverageBlockTime(),
